@@ -5,13 +5,13 @@ import {ThemeContext} from '../contexts/ThemeContext';
 class Navbar extends React.Component {
   static contextType = ThemeContext;
   render() {
-    const {isLightTheme, lightTheme, darkTheme, toggleLoggin, isLoggin} = this.context;
+    const {isLightTheme, lightTheme, darkTheme, toggleAuth, isLoggin} = this.context;
     const theme = isLightTheme? lightTheme: darkTheme;
     return (
-      <ul className="navbar" style={{backgroundColor: theme.nav}}>
+      <ul className="navbar" style={{backgroundColor: theme.nav,  color: theme.text}}>
         <li>Home</li>
         <li>About</li>
-        <li onClick={toggleLoggin}>{isLoggin? "Logout": "Login"}</li>
+        <li onClick={toggleAuth}>{isLoggin? "Logout": "Login"}</li>
       </ul>
     )
   }

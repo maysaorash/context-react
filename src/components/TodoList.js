@@ -8,7 +8,7 @@ class TodoList extends React.Component {
     const {isLightTheme, lightTheme, darkTheme} = this.context;
     const theme = isLightTheme? lightTheme: darkTheme;
     return (
-      <div className='todolist' style={{backgroundColor: theme.body}}>
+      <div className='todolist' style={{backgroundColor: theme.body,  color: theme.text}}>
         <input type="text"/>
         <ul>
           <li style={{backgroundColor: theme.nav}}>Go to the market</li>
