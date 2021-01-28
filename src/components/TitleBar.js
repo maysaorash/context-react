@@ -1,10 +1,9 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 
-class TitleBar extends React.Component {
-  static contextType = ThemeContext;
-  render() {
-    const {isLightTheme, lightTheme, darkTheme, toggleTheme} = this.context;
+function TitleBar (){
+  
+    const {isLightTheme, lightTheme, darkTheme, toggleTheme} = useContext(ThemeContext);
     const theme = isLightTheme? lightTheme: darkTheme;
     return (
       <div className='title-bar' style={{backgroundColor: theme.titleBar,  color: theme.text}}>
@@ -13,6 +12,6 @@ class TitleBar extends React.Component {
       </div>
     )
   }
-}
+
 
 export default TitleBar;
